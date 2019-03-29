@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios';
 
 class Form extends Component {
     constructor() {
@@ -7,13 +8,22 @@ class Form extends Component {
         this.state = {
             name: '',
             price: 0,
-            imgurl: ''
+            img: ''
         }
+    }
+
+    handleCreateProduct = () => {
+        let { name, price, img} = this.state
+        this.props.createProduct({
+            name,
+            price,
+            img
+        })
     }
 
     handleChangeImg = (value) => {
         this.setState({
-            imgurl: value
+            img: value
         })
     }
 
@@ -37,6 +47,8 @@ class Form extends Component {
         })
     }
 
+    
+    
     render() {
         return (
             <div className="form-container">
@@ -46,7 +58,7 @@ class Form extends Component {
                     <div className="img-input">
                         Image URL: <br></br> 
                         <input 
-                        value={this.state.imgurl} 
+                        value={this.state.img} 
                         onChange={(e) => this.handleChangeImg(e.target.value)} 
                         className="input-width">
                         </input>
@@ -70,7 +82,7 @@ class Form extends Component {
                     </div>
                     <div className="flex-buttons">
                         <button onClick={this.cancelInputs}>Cancel</button>
-                        <button>Add to Inventory</button>
+                        <button onClick={this.handleCreateProduct}>Add to Inventory</button>
                     </div>
             </div>
         )

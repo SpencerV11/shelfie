@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 
 class Product extends Component {
+
+
+    handleDeleteClick = () => {
+        let { id } = this.props.products
+        this.props.deleteProduct(id)
+    }
     
     render() {
         console.log(this.props.products)
@@ -10,6 +16,7 @@ class Product extends Component {
                 <div className="name-price-flex">
                     <div className="product-name">{this.props.item.name}</div>
                     <div className="product-price">${this.props.item.price}</div>
+                    <button onClick={this.handleDeleteClick} className="delete-button">Delete</button>
                 </div>
             </div>
         )

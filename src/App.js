@@ -16,20 +16,35 @@ class App extends Component {
 
   componentDidMount = () => {
     axios.get('/api/products').then(res => {
-      console.log(res.data)
       this.setState({
         products: res.data
       })
     }).catch(error => console.log(error))
   }
   
+  createProduct = (product) => {
+    axios.post('/api/products', product).then(res => {
+        this.setState({
+            products: res.data
+        })
+    })
+}
+
+  deleteProduct = (id) => {
+    axios.delete(`api/products/:${id}`).then(res => {
+      this.setState({
+        products: res.data
+      })
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
         <div className="flex-dash-form">
-        <Dashboard products={this.state.products} />
-        <Form />
+        <Dashboard deleteProduct={this.deleteProduct} products={this.state.products} />
+        <Form createProduct={this.createProduct}/>
         </div>
       </div>
     );
