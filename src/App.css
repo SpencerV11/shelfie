@@ -1,33 +1,92 @@
-.App {
-  text-align: center;
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.top-header-container {
+    width: 100%;
+    height: 10vh;
+    background-color: #AB2A19;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.top-header-icon {
+    margin-left: 5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.top-header-title {
+    margin-left: 2rem;
+    font-weight: 400; 
+    color: white;
+    font-size: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.flex-dash-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-container {
+    width: 28%;
+    height: 65vh;
+    background-color: #3ad886;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-img {
+    width: 80%;
+    height: 35vh;
+    background-color: white;
+    margin-top: 2rem;
+}
+
+.flex-buttons {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-width {
+    width: 100%;
+}
+
+.product-container {
+    width: 700px;
+    height: 25vh;
+    background-color: #d34735; 
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 5rem;
+
+}
+
+.name-price-flex {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem;
+
+}
+
+.border-img {
+    margin: 1rem;
+}
+
+.product-name {
+    background: black;
+    color: white;
+    margin-bottom: 2em;
+}
+
+.product-price {
+    background: black;
+    color: white;
+    
 }
